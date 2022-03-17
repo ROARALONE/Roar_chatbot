@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title> ROAR ALONE </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='Explore1.css') }}">
+    </head>
+    <body>
+        <header class="top-header"> 
+            <a class="menu-item brand" href="#"> TH </a>
+        </header>
+
+        <div class="main-intent">
+            <div class="box">    
+                <div align="center"> <img src="https://s.isanook.com/tr/0/ud/279/1395681/5_reasonable.jpg" width="700" height="500"> </div>          
+                
+                {%for i in range(0, {{ R['number_of_days']}} %) 
+                <h2> รายละเอียดสถานที่</h2>
+                <p class="intro"> รหัสเส้นทาง : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R[i]['route_id']}} </font></dd></p>
+                <p class="intro"> ชื่อเส้นทาง : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R[i]['route_name']}} </font></dd></p>
+                <p class="intro"> จำนวนวัน : </p>
+                <p><dd><font color="#76504F"size="4">   {{ R[i]['number_of_days']}} </font></dd></p>
+                <p class="intro"> รหัสสถานที่ : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R[i]['days']['day']['place_stops']['place_id']}} </font></dd></p>
+                <p class="intro"> ชื่อสถานที่ : </p>
+                p><dd><font color="#76504F" size="4">   {{ R[i]['days']['day']['place_stops']['place_name']}} </font></dd></p>
+                {%endfor%}
+            </div>
+        </div>
+        <footer class="bottom-footer">
+            <p> copy right </p>
+        </footer>
+    </body>
+</html>
