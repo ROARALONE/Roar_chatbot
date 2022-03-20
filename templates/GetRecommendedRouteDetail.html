@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title> ROAR ALONE </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='Explore1.css') }}">
+    </head>
+    <body>
+        <header class="top-header"> 
+            <a class="menu-item brand" href="#"> TH </a>
+        </header>
+
+        <div class="main-intent">
+            <div class="box">    
+                <div align="center"> <img src="https://s.isanook.com/tr/0/ud/279/1395681/5_reasonable.jpg" width="700" height="500"> </div>          
+                
+                <h2> รายละเอียดสถานที่</h2>
+                <p class="intro"> รหัสเส้นทาง : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['route_id']}} </font></dd></p>
+                <p class="intro"> ชื่อเส้นทาง : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['route_name']}} </font></dd></p>
+                <p class="intro"> จำนวนวัน : </p>
+                <p><dd><font color="#76504F"size="4">   {{ R['number_of_days']}} </font></dd></p>
+                
+                <br>
+                <h2><font color="#F14668"> สถานที่แวะเที่ยวระหว่างการเดินทาง </font></h2>
+                <h3><font color="#FF9292"> วันที่ 1 </font></h3>
+                <p class="intro"> รหัสสถานที่ : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['days'][0]['place_stops'][0]['place_id']}} </font></dd></p>
+                <p class="intro"> ชื่อสถานที่ : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['days'][0]['place_stops'][0]['place_name']}} </font></dd></p>
+                <p class="intro"> ละติจูด : </p>
+                <p><dd><font color="#76504F"size="4">   {{ R['days'][0]['place_stops'][0]['latitude']}} </font></dd></p>
+                <p class="intro"> ลองจิจูด  : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['days'][0]['place_stops'][0]['latitude']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> รหัสหมวดหมู่ :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ R['days'][0]['place_stops'][0]['category_code']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> คำอธิบายหมวดหมู่ :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ R['days'][0]['place_stops'][0]['category_description']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> แนะนำสถานที่ :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ R['days'][0]['place_stops'][0]['place_introduction']}} </font></dd></p>
+                
+                <div align="center"> <img src=" {{ R['thumbnail_url']}} " width="700" height="500"> </div>
+                <p><dd><font color="#A37E7E" size="3"> เดินทางโดย :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3"> {{ R['days'][0]['place_stops'][0]['travel_by']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> ระยะทาง :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3"> {{ R['days'][0]['place_stops'][0]['distance']}} </font></dd></p>
+                
+            
+                <br>
+                <h2><font color="#F14668"> สถานที่แวะเที่ยวระหว่างการเดินทาง </font></h2>
+                <h3><font color="#FF9292"> วันที่ 2 </font></h3>
+                <p class="intro"> รหัสสถานที่ : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['days'][0]['place_stops'][1]['place_id']}} </font></dd></p>
+                <p class="intro"> ชื่อสถานที่ : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['days'][0]['place_stops'][1]['place_name']}} </font></dd></p>
+                <p class="intro"> ละติจูด : </p>
+                <p><dd><font color="#76504F"size="4">   {{ R['days'][0]['place_stops'][1]['latitude']}} </font></dd></p>
+                <p class="intro"> ลองจิจูด  : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['days'][0]['place_stops'][1]['latitude']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> รหัสหมวดหมู่ :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ R['days'][0]['place_stops'][1]['category_code']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> คำอธิบายหมวดหมู่ :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ R['days'][0]['place_stops'][1]['category_description']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> แนะนำสถานที่ :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ R['days'][0]['place_stops'][1]['place_introduction']}} </font></dd></p>
+                <div align="center"> <img src=" {{ R['thumbnail_url']}} " width="700" height="500"> </div>
+                
+                <p><dd><font color="#A37E7E" size="3"> เดินทางโดย :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3"> {{ R['days'][0]['place_stops'][1]['travel_by']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> ระยะทาง :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3"> {{ R['days'][0]['place_stops'][1]['distance']}} </font></dd></p>
+                
+                <br>
+                <h2><font color="#F14668"> สถานที่แวะเที่ยวระหว่างการเดินทาง </font></h2>
+                <h3><font color="#FF9292"> วันที่ 3 </font></h3>
+                <p class="intro"> รหัสสถานที่ : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['days'][0]['place_stops'][2]['place_id']}} </font></dd></p>
+                <p class="intro"> ชื่อสถานที่ : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['days'][0]['place_stops'][2]['place_name']}} </font></dd></p>
+                <p class="intro"> ละติจูด : </p>
+                <p><dd><font color="#76504F"size="4">   {{ R['days'][0]['place_stops'][2]['latitude']}} </font></dd></p>
+                <p class="intro"> ลองจิจูด  : </p>
+                <p><dd><font color="#76504F" size="4">  {{ R['days'][0]['place_stops'][2]['latitude']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> รหัสหมวดหมู่ :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ R['days'][0]['place_stops'][2]['category_code']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> คำอธิบายหมวดหมู่ :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ R['days'][0]['place_stops'][2]['category_description']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> แนะนำสถานที่ :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ R['days'][0]['place_stops'][2]['place_introduction']}} </font></dd></p>
+                <div align="center"> <img src=" {{ R['thumbnail_url']}} " width="700" height="500"> </div>
+                
+                <p><dd><font color="#A37E7E" size="3"> เดินทางโดย :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3"> {{ R['days'][0]['place_stops'][2]['travel_by']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> ระยะทาง :      </font></dd></p>
+                <p><dd><font color="#413C69" size="3"> {{ R['days'][0]['place_stops'][2]['distance']}} </font></dd></p>
+                
+            </div>
+        </div>
+        <footer class="bottom-footer">
+            <p> copy right </p>
+        </footer>
+    </body>
+</html>
