@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title> ROAR ALONE </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='Explore1.css') }}">
+    </head>
+    <body>
+        <header class="top-header"> 
+            <a class="menu-item brand" href="#"> TH </a>
+        </header>
+
+        <div class="main-intent">
+            <div class="box">    
+                <div align="center"> <img src="https://s.isanook.com/tr/0/ud/279/1395681/5_reasonable.jpg" width="700" height="500"> </div>          
+                
+                
+                <h2> รายละเอียดสถานที่</h2>
+                <p class="intro"> รหัสเส้นทาง : {{ R['route_id']}} </p>
+                <p><dd><font color="#76504F" size="4">   </font></dd></p>
+                <p class="intro"> ชื่อเส้นทาง : {{ R['route_name']}} </p>
+                <p><dd><font color="#76504F" size="4">   </font></dd></p>
+                <p class="intro"> จำนวนวัน :  {{ R['number_of_days']}} </p>
+                <p><dd><font color="#76504F"size="4">    </font></dd></p>
+                
+                <br>              
+                {% for day in R['days'] %}
+                <p><dd><font color="#A37E7E" size="3"> วันที่ :  {{ day['day']}}  </font></dd></p>
+                {% for place in day['place_stops'] %}
+                <p><dd><font color="#A37E7E" size="3"> รหัสสถานที่ :  {{ place['place_id'] }}  </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> ชื่อสถานที่  :  {{ place['place_name'] }}  </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> ละติจูด :      {{ place['latitude'] }}      </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> ลองจิจูด  :    {{ place['longitude'] }}    </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> รหัสหมวดหมู่ :  {{ place['category_code'] }}   </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> คำอธิบายหมวดหมู่ :  {{ place['category_description'] }}  </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> แนะนำสถานที่ :  {{ place['place_introduction'] }}     </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> เดินทางโดย :   {{ place['travel_by'] }}  </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> ระยะทาง :      {{ place['distance'] }}     </font></dd></p> 
+                
+                {% endfor %}
+                {% endfor %}
+
+            </div>
+        </div>
+        <footer class="bottom-footer">
+            <p> copy right </p>
+        </footer>
+    </body>
+</html>
