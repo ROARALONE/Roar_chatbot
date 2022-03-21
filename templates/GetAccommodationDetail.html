@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <title> ROAR ALONE </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='Explore1.css') }}">
+    </head>
+    <body>
+        <header class="top-header"> 
+            <a class="menu-item brand" href="#"> TH </a>
+        </header>
+
+        <div class="main-intent">
+            <div class="box">    
+                <div align="center"> <img src= {{ Ac['thumbnail_url']}} width="700" height="500"> </div>            
+                
+                <h2> รายละเอียดสถานที่ </h2>
+                <p class="intro"> รหัสสถานที่ : {{ Ac['place_id']}}</p>
+                <p><dd><font color="#76504F" size="4">   </font></dd></p>
+                <p class="intro"> ชื่อสถานที่ : {{ Ac['place_name']}}</p>
+                <p><dd><font color="#76504F" size="4">  </font></dd></p>
+                <p class="intro"> ลองจิจูด : {{ Ac['longitude']}}</p>
+                <p><dd><font color="#76504F"size="4">    </font></dd></p>
+                <p class="intro"> ละติจูด : {{ Ac['latitude']}}</p>
+                <p><dd><font color="#76504F" size="4">  </font></dd></p>
+                <p class="intro"> รหัสแผนที่ : {{ Ac['map_code']}}</p>
+                <p><dd><font color="#76504F" size="4">  </font></dd></p>
+               
+                <br>
+                <p class="intro"> SHA </p>
+                <p><dd><font color="#A37E7E" size="3"> sha_name : {{ Ac['sha']['sha_name']}}           </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> sha_type_code : {{ Ac['sha']['sha_type_code']}}         </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> sha_type_description : {{ Ac['sha']['sha_type_description']}}     </font></dd></p>               
+                <p><dd><font color="#A37E7E" size="3"> sha_cate_id : {{ Ac['sha']['sha_cate_id']}}    </font></dd></p>               
+                <p><dd><font color="#A37E7E" size="3"> sha_cate_description : {{ Ac['sha']['sha_cate_description']}} </font></dd></p>
+                
+
+
+                <h1 class="intro"> ข้อมูลสถานที่ </h1>
+                <p><dd><font color="#A37E7E" size="3">  การแนะนำ : {{ Ac['place_information']['introduction']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3">  รายละเอียด : {{ Ac['place_information']['detail']}}  </font></dd></p>
+                <p><dd><font color="#A37E7E" size="4">  ประเภทร้านอาหาร  </font></dd></p>
+
+                {% if Ac['accommodation_types'] != null %}
+                <p><dd><font color="#A37E7E" size="3">  CODE :   </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ Ac['place_information']['accommodation_types'][0]['code']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3">  คำอธิบาย :   </font></dd></p>
+                <p><dd><font color="#413C69" size="3">  {{ Ac['place_information']['accommodation_types'][0]['description']}} </font></dd></p>
+                {% endif %}
+                {% if Ac['place_information'] != null %}
+                <p><dd><font color="#A37E7E" size="3">  ใบอนุญาตที่ลงทะเบียน : {{ Ac['place_information']['register_license_id']}}  </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3">  มาตรฐานดาว : {{ Ac['place_information']['hotel_star']}}  </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3">  แสดงเวลาเช็คอิน : {{ Ac['place_information']['display_checkin_time']}}  </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3">  แสดงเวลาชำระเงิน : {{ Ac['place_information']['display_checkout_time']}}   </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3">  หมายเลขห้อง :  {{ Ac['place_information']['number_of_rooms']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3">  ช่วงราคา : {{ Ac['price_range']}}   </font></dd></p>
+                {% endif %}
+                <br>
+                {% if Ac['location'] != null %}
+                <p><dd><font color="#537C8E" size="4"> ที่ตั้ง         </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> ที่อยู่  :  {{ Ac['location']['address']}}      </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> ตำบล : {{ Ac['location']['sub_district']}}      </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> อำเภอ : {{ Ac['location']['district']}}      </font></dd></p>               
+                <p><dd><font color="#A37E7E" size="3"> จังหวัด : {{ Ac['location']['province']}}     </font></dd></p>                
+                <p><dd><font color="#A37E7E" size="3"> รหัสไปรษณีย์ :  {{ Ac['location']['postcode']}}</font></dd></p>
+                {% endif %}
+                <br>
+                {% if Ac['contact'] != null %}
+                <p><dd><font color="#537C8E" size="4"> ช่องทางการติดต่อ </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> เบอร์โทร </font></dd></p>
+                <p><dd><font color="#85583F" size="3"> {{ Ac['contact']['phones']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> โทรศัพท์มือถือ </font></dd></p>
+                <p><dd><font color="#85583F" size="3">  {{ Ac['contact']['mobiles']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> แฟกซ์ </font></dd></p>
+                <p><dd><font color="#85583F" size="3">  {{ Ac['contact']['fax']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> อีเมล </font></dd></p>
+                <p><dd><font color="#85583F" size="3">  {{ Ac['contact']['emails']}} </font></dd></p>
+                <p><dd><font color="#A37E7E" size="3"> URL</font></dd></p>
+                <p><dd><font color="#85583F" size="3">  {{ Ac['contact']['urls']}} </font></dd></p>
+                {% endif %}
+
+
+                <br>
+                        <p><dd><font color="#362C1D" size="3">  สิ่งอำนวยความสะดวก : </font></dd></p>
+                        {% if Ac['facilities'] != None %}
+                        <p><dd><font color="#362C1D" size="3">  CODE :   </font></dd></p>
+                        <p><dd><font color="#85583F" size="3">  {{ Ac['facilities'][0]['code']}} </font></dd></p>
+                        <p><dd><font color="#362C1D" size="3">  DESCRIPTION : </font></dd></p>
+                        <p><dd><font color="#85583F" size="3">  {{ Ac['facilities'][0]['description']}} </font></dd></p>
+                        {% endif %}
+                        {% if Ac['services'] != null %}
+                        <p><dd><font color="#362C1D" size="3">  บริการ : </font></dd></p>
+                        <p><dd><font color="#85583F" size="3">  {{ Ac['services']}} </font></dd></p>
+                        {% endif %}
+                        <p><dd><font color="#362C1D" size="3">  วิธีการชำระเงิน : </font></dd></p>
+                        {% if Ac['payment_methods'] != None %}
+                        <p><dd><font color="#362C1D" size="3">  CODE : </font></dd></p>
+                        <p><dd><font color="#85583F" size="3">  {{ Ac['payment_methods'][0]['code']}} </font></dd></p>
+                        <p><dd><font color="#362C1D" size="3">  DESCRIPTION : </font></dd></p>
+                        <p><dd><font color="#85583F" size="3">  {{ Ac['payment_methods'][0]['description']}} </font></dd></p>
+                        <p><dd><font color="#362C1D" size="3">  CODE : </font></dd></p>
+                        <p><dd><font color="#85583F" size="3">  {{ Ac['payment_methods'][1]['code']}} </font></dd></p>
+                        <p><dd><font color="#362C1D" size="3">  DESCRIPTION : </font></dd></p>
+                        <p><dd><font color="#85583F" size="3">  {{ Ac['payment_methods'][1]['description']}} </font></dd></p>
+                        {% endif %}
+                           
+                        <br>
+                        <p><font color="#362C1D" size="3">  ปลายทาง </font></p>
+                        <p><font color="#85583F" size="3">  {{ Ac['destination']}} </font></p>
+                        {% if Ac['standard'] != null %}
+                        <p><font color="#362C1D" size="3">  มาตรฐาน </font></p>
+                        <p><font color="#85583F" size="3">  {{ Ac['standard']}} </font></p>
+                        {% endif %}
+                        {% if Ac['tags'] != null %}
+                        <p><font color="#85583F" size="3">  TAGS </font></p>
+                        <p><font color="#4A3933" size="3">  {{ Ac['tags']}} </font></p>
+                        {% endif %}
+                        {% if Ac['awards'] != null %}
+                        <p><font color="#362C1D" size="3">  รางวัล </font></p>
+                        <p><font color="#85583F" size="3">  {{ Ac['awards']}} </font></p>
+                        {% endif %}
+                        {% if Ac['area'] != null %}
+                        <p><font color="#362C1D" size="3">  พื้นที่ </font></p>
+                        <p><font color="#85583F" size="3">  {{ Ac['area']}} </font></p>
+                        {% endif %}
+                        <p><font color="#362C1D" size="3">  วันที่อัพเดท </font></p>
+                        <p><font color="#85583F" size="3">  {{ Ac['update_date']}} </font></p>
+                  <br>
+            </div>
+        </div>
+        <footer class="bottom-footer">
+            <p> copy right </p>
+        </footer>
+    </body>
+</html>
